@@ -37,7 +37,7 @@ clear
 cd
 rm -rf /etc/github
 if [[ -e /etc/github/api ]]; then
-else
+
 mkdir /etc/github
 echo "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" > /etc/github/api
 echo "imanfals51@gmail.com" > /etc/github/email
