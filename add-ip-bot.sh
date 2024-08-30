@@ -261,15 +261,6 @@ echo -e "   ${BLUE}_______________________________$NC"
 echo -e "   \e[1;32m  WELCOME TO REGISTER IPVPS $NC"
 echo -e "   ${BLUE}_______________________________$NC"
 echo ""
-read -p "   VERIFIKASI ADMIN :   " host11
-if [[ $host11 == ashiradeaswara ]]; then
-clear
-mkdir /root/izinsc
-cd /root/izinsc
-clear
-lane
-register
-lane
 echo -e " $g 1.$NC ${c}ADD IP VPS "$NC     
 echo -e " $g 2.$NC ${c}DELETE IP VPS"$NC
 echo -e " $g 3.$NC ${c}RENEW IP VPS"$NC
