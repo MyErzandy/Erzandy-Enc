@@ -82,15 +82,15 @@ echo -e "MASUKAN IP VPS YANG BELUM DI DAFTAR !"
 lane
 echo -e ""
 read -p "Input IP Address : " ipqu
-CLIENT_EXISTS=$(grep -w $ipqu /root/izinsc/ip | wc -l)
+CLIENT_EXISTS=$(grep -w $ipqu /root/permissionautoscript/ip | wc -l)
 if [[ ${CLIENT_EXISTS} == '1' ]]; then
 echo "IP Already Exist !"
 exit 0
 fi
 echo -e ""
-read -p "Input Username IP (Example : D_swara) : " name
+read -p "Input Username  : " name
 echo -e ""
-read -p "Input waktu expired:" exp
+read -p "Input masaaktif :" exp
 
 exp2=`date -d "${exp} days" +"%Y-%m-%d"`
 echo "### ${name} ${exp2} ${ipqu}" >> /root/permissionautoscript/ip
@@ -100,10 +100,10 @@ git config --global user.name "${USER}" &> /dev/null
 rm -rf .git &> /dev/null
 git init &> /dev/null
 git add . &> /dev/null
-git commit -m izin &> /dev/null
+git commit -m permission &> /dev/null
 git branch -M main &> /dev/null
-git remote add origin https://github.com/${USER}/izin.git
-git push -f https://${TOKEN}@github.com/${USER}/izin.git
+git remote add origin https://github.com/${USER}/permission.git
+git push -f https://${TOKEN}@github.com/${USER}/permission.git
 rm -rf /root/izinsc
 clear
 CHATIDD="$CHATIDD"
@@ -147,19 +147,19 @@ del-ip() {
     lane
 	echo ""
     read -p "Input IP Address To Delete : " ipdel
-    name=$(cat /root/izinsc/ip | grep $ipdel | cut -d " " -f2)
-    exp=$(cat /root/izinsc/ip | grep $ipdel | cut -d " " -f3)
+    name=$(cat /root/permissionautoscript/ip | grep $ipdel | cut -d " " -f2)
+    exp=$(cat /root/permissionautoscript/ip | grep $ipdel | cut -d " " -f3)
     sed -i "/^### $name $exp $ipdel/d" /root/izinsc/ip
     git config --global user.email "${EMAIL}" &> /dev/null
     git config --global user.name "${USER}" &> /dev/null
     rm -rf .git &> /dev/null
     git init &> /dev/null
     git add . &> /dev/null
-    git commit -m izin &> /dev/null
+    git commit -m permission &> /dev/null
     git branch -M main &> /dev/null
-	git remote add origin https://github.com/${USER}/izin.git
-	git push -f https://${TOKEN}@github.com/${USER}/izin.git
-    rm -rf /root/izinsc
+	git remote add origin https://github.com/${USER}/permission.git
+	git push -f https://${TOKEN}@github.com/${USER}/permission.git
+    rm -rf /root/permissionautoscript
     clear
 CHATIDD="$CHATIDD"
 CHATID="$CHATID"
@@ -199,20 +199,20 @@ echo ""
 lane
 echo -e "${g}        RENEW IP VPS      $NC"
 lane
-grep -E "^###" "/root/izinsc/ip" | cut -d ' ' -f 2-6 | column -t | sort | uniq
+grep -E "^###" "/root/permissionautoscript/ip" | cut -d ' ' -f 2-6 | column -t | sort | uniq
 lane
 echo ""
 read -p "  Input IP Address To Renew : " ipdel
 read -p "  Input Days  : " days
-name=$(cat /root/izinsc/ip | grep $ipdel | cut -d " " -f2)
-exp=$(cat /root/izinsc/ip | grep $ipdel | cut -d " " -f3)
+name=$(cat /root/permissionautoscript/ip | grep $ipdel | cut -d " " -f2)
+exp=$(cat /root/permissionautoscript/ip | grep $ipdel | cut -d " " -f3)
 now=$(date +%Y-%m-%d)
 d1=$(date -d "$exp" +%s)
 d2=$(date -d "$now" +%s)
 exp2=$(( (d1 - d2) / 86400 ))
 exp3=$(($exp2 + $days))
 exp4=`date -d "$exp3 days" +"%Y-%m-%d"`
-sed -i "s/### $name $exp $ipdel/### $name $exp4 $ipdel/g" /root/izinsc/ip
+sed -i "s/### $name $exp $ipdel/### $name $exp4 $ipdel/g" /root/permissionautoscript/ip
 git config --global user.email "${EMAIL}" &> /dev/null
 git config --global user.name "${USER}" &> /dev/null
 rm -rf .git &> /dev/null
