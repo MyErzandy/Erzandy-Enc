@@ -93,7 +93,7 @@ echo -e ""
 read -p "Input waktu expired:" exp
 
 exp2=`date -d "${exp} days" +"%Y-%m-%d"`
-echo "### ${name} ${exp2} ${ipqu}" >> /root/izinsc/ip
+echo "### ${name} ${exp2} ${ipqu}" >> /root/permissionautoscript/ip
 
 git config --global user.email "${EMAIL}" &> /dev/null
 git config --global user.name "${USER}" &> /dev/null
