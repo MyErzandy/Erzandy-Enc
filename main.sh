@@ -22,7 +22,7 @@ TIME=$(date '+%d %b %Y')
 ipsaya=$(wget -qO- ipinfo.io/ip)
 TIMES="10"
 CHATID="-1002145945743"
-KEY="6649557378:AAHD3V6crzj4fu7BgFjyzkMDP8bqdb_S-Z0"
+KEY="7076457502:AAERnCTuuNjEk-lcIIiGguPJ75_NRdvPRsM"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 clear
 export IP=$( curl -sS icanhazip.com )
@@ -1028,7 +1028,7 @@ echo -e "${BIBlue}╭═══════════════════�
 echo -e "${BIBlue}│${BGCOLOR} SUCCESS INSTALL AUTOSCRIPT PREMIUM BY VPN EXPRESS${NC} ${BIBlue}│${NC}"
 echo -e "${BIBlue}╰════════════════════════════════════════════════════╯${NC}"
 echo -e ""
-echo -e "\033[93;1m Wait inn 5 sec...\033[0m"
+echo -e "\033[93;1m please Wait in 5 second...\033[0m"
 systemctl restart xray
 systemctl restart udp-custom
 sleep 5
