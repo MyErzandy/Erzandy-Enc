@@ -254,7 +254,7 @@ TIMES="10"
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
     git remote add origin https://github.com/AngIMAN/permission
-    git push -f https://${TOKEN}@github.com/AngIMAN/permission.git &> /dev/null
+    git push -f https://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@github.com/AngIMAN/permission.git &> /dev/null
     rm -rf /root/ipvps
     clear
     sleep 1
