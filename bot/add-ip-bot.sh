@@ -24,7 +24,7 @@ checking_sc() {
 }
 checking_sc
 # Token AngIMAN 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
-TOKEN="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"
+TOKEN="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"
 today=`date -d "0 days" +"%Y-%m-%d"`
 git clone https://github.com/AngIMAN/izin_jual.git /root/ipvps/ &> /dev/null
 clear
