@@ -34,8 +34,6 @@ Exp100=$(curl -sS ${Repo1}ip | grep $MYIP | awk '{print $3}')
 d2=$(date -d "$date_list" +"+%s")
 d1=$(date -d "$Exp" +"+%s")
 dayleft=$(( ($d1 - $d2) / 86400 ))
-TOKEN="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"
-today=`date -d "0 days" +"%Y-%m-%d"`
 
 #########################
 [[ ! -f /usr/bin/git ]] && apt install git -y &> /dev/null
@@ -254,7 +252,7 @@ TIMES="10"
     git commit -m m &> /dev/null
     git branch -M main &> /dev/null
     git remote add origin https://github.com/AngIMAN/permission
-    git push -f https://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@github.com/AngIMAN/permission.git &> /dev/null
+    git push -f https://${TOKEN}@github.com/AngIMAN/permission.git &> /dev/null
     rm -rf /root/ipvps
     clear
     sleep 1
